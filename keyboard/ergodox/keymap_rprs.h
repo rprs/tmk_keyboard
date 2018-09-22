@@ -16,7 +16,7 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
      * | Tab    |   A  |   S  |   D  |   F  |   G  |------|           |------|   H  |   J  |   K  |   L  |   ;  |   '    |
      * |--------+------+------+------+------+------| LGui |           |  \   |------+------+------+------+------+--------|
-     * | LS/Cps |   Z  |   X  |   C  |   V  |   B  |      |           |      |   N  |   M  |   ,  |   .  |   /  |   ]    |
+     * | LS/Cps |   Z  |   X  |   C  |   V  |   B  |      |           | RGui |   N  |   M  |   ,  |   .  |   /  |   ]    |
      * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
      *   | LCtl | ~+L1 | ~+L2 |      | F10  |                                       |  Lft |  Up  |  Dn  | Rght | RGui |
      *   `----------------------------------'                                       `----------------------------------'
@@ -85,7 +85,7 @@ static const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
              EQL, 6,   7,   8,   9,   0,   MINS,
              FN1, Y,   U,   I,   O,   P,   LBRC,
                   H,   J,   K,   L,   SCLN,QUOT,
-             BSLS,N,   M,   COMM,DOT, SLSH,RBRC,
+             FN6, N,   M,   COMM,DOT, SLSH,RBRC,
                        LEFT,DOWN,UP,  RGHT,RGUI,
         RALT,RCTL,
         PGUP,
@@ -196,6 +196,7 @@ static const uint16_t PROGMEM fn_actions[] = {
     [3] =   ACTION_LAYER_TOGGLE(1),                         // FN3 = Toggle L1
     [4] =   ACTION_LAYER_TAP_TOGGLE(2),                     // FN4 = Hold: Toggle L2, Tap: Push L2
     [5] =   ACTION_LAYER_TOGGLE(2),                         // FN5 = Toggle L2
+    [6] =   ACTION_MODS_TAP_KEY(MOD_RGUI, KC_BSLS)          // FN6 = Hold: Super (right), Tap: Backlash
 };
 
 void action_function(keyrecord_t *record, uint8_t id, uint8_t opt)
